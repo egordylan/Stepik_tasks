@@ -15,19 +15,26 @@ import random
 
 print('The program generates a random number in the range from 11 to 100100.')
 
+def is_valid(num):
+    if num.isdigit():
+        return num
+    else:
+        print('It is not a number. Please input number again.')
+        return is_valid(input('Please, guess the number: ', ))
 
 def random_number():
     #  this is a computer's number
     random_num = random.randint(11, 100)
     #  this is a user's number
-    num = int(input('Please, guess the number: ', ))
+    num = is_valid(input('Please, guess the number: ', ))
+
     while True:
-        if num > random_num:
+        if int(num) > random_num:
             print('Too many, please try again.')
-            num = int(input('Please, guess the number: ',))
-        elif num < random_num:
+            num = is_valid(input('Please, guess the number: ',))
+        elif int(num) < random_num:
             print('Too little, try again.')
-            num = int(input('Please, guess the number: ',))
+            num = is_valid(input('Please, guess the number: ',))
         else:
             print('You guessed right, congratulations!')
             break
