@@ -1,1 +1,1 @@
-# Stepik_tasks
+# Stepik tasks
