@@ -1,7 +1,7 @@
 """
 Guess the number
 
-The program generates a random number in the range from 11 to 100100
+The program generates a random number in the range from 1 to 100
 and asks a user to guess this number.
 If the user's guess is more than a random number then the program
 should display the message 'Too many, please try again'.
@@ -13,18 +13,19 @@ and display the message 'You guessed right, congratulations!'.
 
 import random
 
-print('The program generates a random number in the range from 11 to 100100.')
+print('The program generates a random number in the range from 1 to 100.')
 
 def is_valid(num):
-    if num.isdigit():
+    if num.isdigit() and 1 <= int(num) <= 100:
         return num
     else:
-        print('It is not a number. Please input number again.')
+        print('''It is not a number or not in the interval from 1 to
+100. Please input number again.''')
         return is_valid(input('Please, guess the number: ', ))
 
 def random_number():
     #  this is a computer's number
-    random_num = random.randint(11, 100100)
+    random_num = random.randint(1, 100)
     #  this is a user's number
     num = is_valid(input('Please, guess the number: ', ))
 
