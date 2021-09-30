@@ -24,7 +24,7 @@ def is_valid(num):
 
 def random_number():
     #  this is a computer's number
-    random_num = random.randint(11, 100)
+    random_num = random.randint(11, 100100)
     #  this is a user's number
     num = is_valid(input('Please, guess the number: ', ))
 
